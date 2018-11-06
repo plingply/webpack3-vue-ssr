@@ -3,8 +3,8 @@ import axios from 'axios';
 let Promise = require('es6-promise').Promise;
 
 const Axios = axios.create({
-    baseURL: 'https://dev.imxyb.com',
-    timeout: 5000,
+    baseURL: 'https://api-dev.imxyb.com',
+    timeout: 60000,
     withCredentials: false, //带上 cookie
 })
 
@@ -46,11 +46,6 @@ Axios.interceptors.request.use(config => {
 //添加一个返回拦截器
 Axios.interceptors.response.use(res => {
     const { data } = res
-    if (data.status == 'ok') {
-        return data
-    } else {
-		//处理错误
-    }
     return data
 }, error => {
     return Promise.reject(error)

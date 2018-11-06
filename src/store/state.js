@@ -1,4 +1,3 @@
 export default {
-	item:{},
-	item1:{}
+	item:{}
 }
